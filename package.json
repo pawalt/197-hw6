@@ -2,16 +2,28 @@
   "name": "hw6",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel watch frontend/src/index.html",
+    "server": "node backend/server.js",
+    "dev": "concurrently --kill-others \"npm run build\" \"npm run server\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@parcel/transformer-react-refresh-wrap": "^2.4.1",
+    "axios": "^0.26.1",
+    "concurrently": "^7.1.0",
     "cookie-session": "^2.0.0",
     "express": "^4.17.3",
-    "mongoose": "^6.2.9"
+    "mongoose": "^6.2.9",
+    "parcel": "^2.4.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
   }
 }

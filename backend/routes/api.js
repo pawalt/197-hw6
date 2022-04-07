@@ -11,7 +11,6 @@ router.get('/', async (req, res, next) => {
     res.json(questions)
   } catch (e) {
     next(e)
-    res.send('questions getting had a problem!')
   }
 })
 
@@ -25,7 +24,6 @@ router.post('/add', isAuthenticated, async (req, res, next) => {
     res.json(q)
   } catch (e) {
     next(e)
-    res.send('question creation had a problem')
   }
 })
 

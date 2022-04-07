@@ -13,7 +13,6 @@ router.post('/signup', async (req, res, next) => {
     res.send('user creation was successful')
   } catch (e) { 
     next(e)
-    res.send('user creation had a problem')
   }
 })
 
@@ -31,8 +30,11 @@ router.post('/login', async (req, res, next) => {
     }
   } catch (e) {
     next(e)
-    res.send('user login had a problem')
   }
+})
+
+router.post('/verify', async (req, res, next) => {
+  res.send(req.session.username)
 })
 
 router.post('/logout', isAuthenticated, async (req, res) => {
